@@ -1,7 +1,7 @@
-NAME = sed
+NAME = harl
 
 SRC_DIR = src/
-INC_DIR = inc/
+INC_DIR = includes/
 
 SRCS = $(wildcard $(SRC_DIR)*.cpp)
 INCS = $(wildcard $(INC_DIR)*.hpp)
