@@ -18,27 +18,31 @@
 
 class Fixed
 {
-    public:
-        //Constructors
-        Fixed(void);
-        Fixed(const int num);
-        Fixed(const float num);
-        //Copy-copy Assignment
-        Fixed (const Fixed &source);
-        Fixed& operator=(const Fixed &source);
-        //member functs
-        float   toFloat(void) const;
-        int     toInt(void) const;
-        //get-set
-        int     getRawBits(void)const;
-        void    setRawBits(int const raw);
-        //Destructor
-        ~Fixed(void);
-        
-    private:
-        int                 _fixed_point;
-        static const int    _fract_bits = 8;
+public:
+    // Constructors
+    Fixed();
+    Fixed(const int num);
+    Fixed(const float num);
+    
+    // Copy constructor and assignment operator
+    Fixed(const Fixed& other);
+    Fixed& operator=(const Fixed& other);
+    
+    // Member functions
+    float toFloat() const;
+    int toInt() const;
+    
+    // Getter and setter
+    int getRawBits() const;
+    void setRawBits(int const raw);
+    
+    // Destructor
+    ~Fixed();
+    
+private:
+    int _fixed_point;
+    static const int _fract_bits = 8;
 };
 
-std::ostream    &operator<<(std::ostream &o, Fixed const &fixed); 
+std::ostream& operator<<(std::ostream& o, const Fixed& fixed); 
 #endif

@@ -15,35 +15,35 @@
 //Consructors--------------------------------------------------
 Fixed::Fixed(void)
 {
-    // std::cout<<"Default constructor is called"<<std::endl;
+    // std::cout << "Default constructor is called" << std::endl;
     this->_fixed_point = 0;
     return;
 }
 
 Fixed::Fixed(const int num)
 {
-    // std::cout << "Int Constructor called" << std::endl;
-    this->_fixed_point = num << this->_fract_bits; 
+    // std::cout  <<  "Int Constructor called"  <<  std::endl;
+    this->_fixed_point = num  <<  this->_fract_bits; 
     return;
 }
 
 Fixed::Fixed(const float num)
 {
-	// std::cout << "Float Constructor called" << std::endl;
-	this->_fixed_point = roundf(num * (1 << this->_fract_bits)); 
+	// std::cout  <<  "Float Constructor called"  <<  std::endl;
+	this->_fixed_point = roundf(num * (1  <<  this->_fract_bits)); 
     return;
 }
 //Copy-Copy assignment--------------------------------------------------
 Fixed::Fixed(const Fixed &source)
 {
-    // std::cout<<"Copy constructor is called"<<std::endl;
+    // std::cout << "Copy constructor is called" << std::endl;
     *this = source;
     return;
 }
 
 Fixed& Fixed::operator=(const Fixed &rh)
 {
-    // std::cout<<"Copy assignment operator is called"<<std::endl;
+    // std::cout << "Copy assignment operator is called" << std::endl;
     if (this != &rh)
         this->_fixed_point = rh.getRawBits();
     return (*this);
@@ -52,7 +52,7 @@ Fixed& Fixed::operator=(const Fixed &rh)
 //member functs--------------------------------------------------
 float	Fixed::toFloat(void)const
 {
-	return ((float)this->_fixed_point / (float)(1 << this->_fract_bits));
+	return ((float)this->_fixed_point / (float)(1  <<  this->_fract_bits));
 }
 
 int	Fixed::toInt(void)const
@@ -68,7 +68,7 @@ int	Fixed::getRawBits(void)const
 
 void	Fixed::setRawBits(int const raw)
 {
-	// std::cout << "setRawBits member function called" << std::endl;
+	// std::cout  <<  "setRawBits member function called"  <<  std::endl;
 	this->_fixed_point = raw;
     return;
 }
@@ -193,12 +193,12 @@ const Fixed& Fixed::max(Fixed const &num1, Fixed const &num2)
 //Destructor--------------------------------------------------
 Fixed::~Fixed(void)
 {
-    // std::cout<<"Destructor is called"<<std::endl;
+    // std::cout << "Destructor is called" << std::endl;
     return;
 }
 
-std::ostream	&operator<<(std::ostream &output, Fixed const &object)
+std::ostream	&operator << (std::ostream &output, Fixed const &object)
 {
-	output << object.toFloat();
+	output  <<  object.toFloat();
 	return (output);
 }

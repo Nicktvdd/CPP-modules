@@ -4,14 +4,14 @@
 ClapTrap::ClapTrap(void): _hit_points(10), _energy_points(10), _attack_damage(0)
 {
     this->_name = "Anonymous";
-    std::cout<<YELLOW<<this->_name<<BLUE<<" is Born!"<<RESET<<std::endl;
+    std::cout << YELLOW << this->_name << BLUE << " is Born!" << RESET << std::endl;
     return;
 }
 
 //string constructor
 ClapTrap::ClapTrap(std::string name): _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-    std::cout<<YELLOW<<name<<BLUE<<" is Born!"<<RESET<<std::endl;
+    std::cout << YELLOW << name << BLUE << " is Born!" << RESET << std::endl;
     this->_name = name;
     return;
 }
@@ -38,7 +38,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rh_src)
 //destructor
 ClapTrap::~ClapTrap(void)
 {
-    std::cout<<YELLOW<<this->_name<<BLUE<<" is Destroyed!"<<RESET<<std::endl;
+    std::cout << YELLOW << this->_name << BLUE << " is Destroyed!" << RESET << std::endl;
     return;
 }
 
@@ -90,13 +90,13 @@ void    ClapTrap::attack(const std::string &target)
     if (this->_energy_points == 0 || this->_hit_points == 0)
     {
         if (this->_hit_points == 0)
-            std::cout<<RED<<"Cannot attack, "<<this->_name<<" is a useless potato now :("<<RESET<<std::endl;
+            std::cout << RED << "Cannot attack, " << this->_name << " is a useless potato now :(" << RESET << std::endl;
         else
-            std::cout<<RED<<"Cannot attack, "<<this->_name<<" has no more energy"<<RESET<<std::endl;
+            std::cout << RED << "Cannot attack, " << this->_name << " has no more energy" << RESET << std::endl;
     }
     else
     {
-        std::cout<<MAGENTA<<this->_name<<" attacks "<<target<<" causing "<<this->_attack_damage<<" points of damage"<<RESET<<std::endl;
+        std::cout << MAGENTA << this->_name << " attacks " << target << " causing " << this->_attack_damage << " points of damage" << RESET << std::endl;
         this->_energy_points--;
     }
 }
@@ -106,39 +106,39 @@ void    ClapTrap::beRepaired(unsigned int amount)
     if (this->_energy_points == 0 || this->_hit_points == 0)
     {
         if (this->_hit_points == 0)
-            std::cout<<RED<<"Cannot be repaired, "<<this->_name<<" is a useless potato now :("<<RESET<<std::endl;
+            std::cout << RED << "Cannot be repaired, " << this->_name << " is a useless potato now :(" << RESET << std::endl;
         else
-            std::cout<<RED<<"Cannot be repaired, "<<this->_name<<" has no more energy"<<RESET<<std::endl;
+            std::cout << RED << "Cannot be repaired, " << this->_name << " has no more energy" << RESET << std::endl;
     }
     else if (this->_hit_points == 10)
-        std::cout<<MAGENTA<<"No need to repair "<<this->_name<<" as they already have "<<this->_hit_points<<" hit points."<<RESET<<std::endl;
+        std::cout << MAGENTA << "No need to repair " << this->_name << " as they already have " << this->_hit_points << " hit points." << RESET << std::endl;
     else
     {
         this->_hit_points += amount;
         if (this->_hit_points > 10)
             this->_hit_points = 10;
         this->_energy_points--;
-        std::cout<<MAGENTA<<this->_name<<" received "<<amount<<" hit points."<<RESET<<std::endl;
+        std::cout << MAGENTA << this->_name << " received " << amount << " hit points." << RESET << std::endl;
     }
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->_hit_points == 0)
-        std::cout<<RED<<this->_name<<" is already dead"<<RESET<<std::endl;
+        std::cout << RED << this->_name << " is already dead" << RESET << std::endl;
     else
     {
         this->_hit_points -= amount;
         if (this->_hit_points < 0)
             this->_hit_points = 0;
-        std::cout<<MAGENTA<<this->_name<<" Was attacked and lost "<<amount<<" hit points."<<RESET<<std::endl;
+        std::cout << MAGENTA << this->_name << " Was attacked and lost " << amount << " hit points." << RESET << std::endl;
     }
 }
 
 void    ClapTrap::stats(void)const
 {
-    std::cout<<RED<<this->_name<<RESET<<" have:"<<std::endl;
-    std::cout<<GREEN<<this->_hit_points<<RESET<<" hit points"<<std::endl;
-    std::cout<<GREEN<<this->_energy_points<<RESET<<" energy points"<<std::endl;
-    std::cout<<GREEN<<this->_attack_damage<<RESET<<" attack damage"<<std::endl<<std::endl;
+    std::cout << RED << this->_name << RESET << " have:" << std::endl;
+    std::cout << GREEN << this->_hit_points << RESET << " hit points" << std::endl;
+    std::cout << GREEN << this->_energy_points << RESET << " energy points" << std::endl;
+    std::cout << GREEN << this->_attack_damage << RESET << " attack damage" << std::endl << std::endl;
 }

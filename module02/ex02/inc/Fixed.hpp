@@ -68,6 +68,6 @@ class Fixed
         static const int    _fract_bits = 8;
 };
 
-std::ostream    &operator<<(std::ostream &o, Fixed const &fixed); 
+std::ostream    &operator << (std::ostream &o, Fixed const &fixed); 
 
 #endif

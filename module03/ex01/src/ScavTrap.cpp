@@ -7,7 +7,7 @@ ScavTrap::ScavTrap(void)
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
-    std::cout<<YELLOW<<this->_name<<BLUE<<" is Born! as SCAV"<<RESET<<std::endl;
+    std::cout << YELLOW << this->_name << BLUE << " is Born! as SCAV" << RESET << std::endl;
     return;
 }
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(std::string name) :ClapTrap(name)
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
-     std::cout<<YELLOW<<this->_name<<BLUE<<" is Born as SCAV"<<RESET<<std::endl;
+     std::cout << YELLOW << this->_name << BLUE << " is Born as SCAV" << RESET << std::endl;
     return;
 }
 //copy constructor
@@ -44,7 +44,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rh_src)
 //destructor
 ScavTrap::~ScavTrap(void)
 {
-    std::cout<<YELLOW<<this->_name<<BLUE<<" is Destroyed, as SCAV"<<RESET<<std::endl;
+    std::cout << YELLOW << this->_name << BLUE << " is Destroyed, as SCAV" << RESET << std::endl;
     return;
 }
 
@@ -54,18 +54,18 @@ void    ScavTrap::attack(const std::string &target)
     if (this->_energy_points == 0 || this->_hit_points == 0)
     {
         if (this->_hit_points == 0)
-            std::cout<<RED<<"Cannot attack, "<<this->_name<<" is a useless potato now :( as SCAV"<<RESET<<std::endl;
+            std::cout << RED << "Cannot attack, " << this->_name << " is a useless potato now :( as SCAV" << RESET << std::endl;
         else
-            std::cout<<RED<<"Cannot attack, "<<this->_name<<" has no more energy as SCAV"<<RESET<<std::endl;
+            std::cout << RED << "Cannot attack, " << this->_name << " has no more energy as SCAV" << RESET << std::endl;
     }
     else
     {
-        std::cout<<MAGENTA<<this->_name<<" attacks "<<target<<" causing "<<this->_attack_damage<<" points of damage as SCAV"<<RESET<<std::endl;
+        std::cout << MAGENTA << this->_name << " attacks " << target << " causing " << this->_attack_damage << " points of damage as SCAV" << RESET << std::endl;
         this->_energy_points--;
     }
 }
 
 void   ScavTrap::guardGate()
 {
-    std::cout<<"ScavTrap "<<this->_name<<" is in gate keeper mode! "<<std::endl;
+    std::cout << "ScavTrap " << this->_name << " is in gate keeper mode! " << std::endl;
 }

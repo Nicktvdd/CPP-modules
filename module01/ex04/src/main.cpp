@@ -16,18 +16,18 @@ static int check_input(int argc, char **argv)
 {
     if (argc < 4)
     {
-        std::cout<<"Not enough arguments"<<std::endl;
+        std::cout << "Not enough arguments" << std::endl;
         return (0);
     }
     else if (argc > 4)
     {
-        std::cout<<"Too many arguments"<<std::endl;
+        std::cout << "Too many arguments" << std::endl;
         return (0);
     }
     
     if (argv[2][0] == '\0' || argv[3][0] == '\0')
     {
-        std::cout<<"You can not have an empty string as argument"<<std::endl;
+        std::cout << "You can not have an empty string as argument" << std::endl;
         return (0);
     }
     return (1);
@@ -73,22 +73,22 @@ int main (int argc, char **argv)
         input_file.open(filename);
         if (!input_file.is_open())
         {
-            std::cout<<"Input file doesn't exist"<<std::endl;
+            std::cout << "Input file doesn't exist" << std::endl;
             return (0);
         }
         output_file.open(filename + ".replace");
         if (!output_file.is_open())
         {
-            std::cout<<"Cant open output file"<<std::endl;
+            std::cout << "Cant open output file" << std::endl;
             input_file.close();
             return(0);
         }
         while (std::getline(input_file, buffer))
         {
             buffer = replacer(buffer, original, replace);
-            output_file << buffer;
+            output_file  <<  buffer;
             if (input_file.peek() != EOF)
-				output_file << std::endl;
+				output_file  <<  std::endl;
         }
         output_file.close();
         input_file.close();

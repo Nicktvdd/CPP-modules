@@ -33,8 +33,8 @@ void    HumanB::setWeapon(Weapon &weapon)
 void    HumanB::attack(void) const
 {
     if (this->_weapon == nullptr)
-        std::cout<<this->_name<<" doesn't have any weapon!"<<std::endl;
+        std::cout << this->_name << " doesn't have any weapon!" << std::endl;
     else
-        std::cout<<this->_name<<" attacks with their "<<(*_weapon).getType()<<std::endl;
+        std::cout << this->_name << " attacks with their " << (*_weapon).getType() << std::endl;
     return;
 }

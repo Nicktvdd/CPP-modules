@@ -3,7 +3,7 @@
 
 int main ()
 {
-    ScavTrap Good_guy("Rambo");
+    ScavTrap Good_guy("Vault Hunter");
     ScavTrap Bad_guy;
 
     Good_guy.stats();

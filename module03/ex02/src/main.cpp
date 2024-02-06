@@ -5,8 +5,8 @@
 int main ()
 {
     {
-        std::cout<<RED<<"----------TEST 1----------"<<RESET<<std::endl<<std::endl;
-        FragTrap Good_guy("Rambo");
+        std::cout << RED << "----------TEST 1----------" << RESET << std::endl << std::endl;
+        FragTrap Good_guy("Vault Hunter");
         FragTrap Bad_guy;
 
         Good_guy.stats();
@@ -30,8 +30,8 @@ int main ()
         Bad_guy.stats();
     }
     {
-        std::cout<<std::endl<<std::endl;
-        std::cout<<RED<<"----------TEST ALL----------"<<RESET<<std::endl<<std::endl;
+        std::cout << std::endl << std::endl;
+        std::cout << RED << "----------TEST ALL----------" << RESET << std::endl << std::endl;
 
         ClapTrap Clappy("Clappy");
         ScavTrap Scavvy ("Scavvy");

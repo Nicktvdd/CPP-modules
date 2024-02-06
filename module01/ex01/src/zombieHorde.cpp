@@ -16,7 +16,7 @@ Zombie    *zombieHorde( int N, std::string name )
 {
     if (N <= 0)
     {
-        std::cout<<"Cannot allocate less than 1 Zombie"<<std::endl;
+        std::cout << "Cannot allocate less than 1 Zombie" << std::endl;
         return (NULL);
     }
     
@@ -25,7 +25,7 @@ Zombie    *zombieHorde( int N, std::string name )
     if (!zombies)
     {
         return (NULL);
-        std::cout<<"Allocation failed"<<std::endl;
+        std::cout << "Allocation failed" << std::endl;
     }
     else
     {

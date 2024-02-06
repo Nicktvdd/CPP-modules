@@ -2,7 +2,7 @@
 
 int main ()
 {
-    ClapTrap Good_guy("Rambo");
+    ClapTrap Good_guy("Vault Hunter");
     ClapTrap Bad_guy;
 
     Good_guy.stats();
