@@ -20,7 +20,6 @@ $(NAME): $(OBJ)
 
 clean:
 	$(REMOVE) $(OBJ)
-	$(REMOVE) $(wildcard *.replace)
 
 fclean: clean
 	$(REMOVE) $(NAME)
