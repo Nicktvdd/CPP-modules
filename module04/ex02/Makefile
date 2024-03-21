@@ -9,7 +9,6 @@ INCS = $(wildcard $(INC_DIR)*.hpp)
 CC = c++
 FLAGS = -Wextra -Wall -Werror -std=c++11
 
-AR = ar rcs
 OBJ = $(SRCS:.cpp=.o)
 REMOVE = rm -f
 

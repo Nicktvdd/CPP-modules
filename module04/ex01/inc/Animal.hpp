@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:33:37 by nvan-den          #+#    #+#             */
-/*   Updated: 2024/02/07 11:33:38 by nvan-den         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:02:47 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal
         //overload operator =
         Animal& operator = (const Animal &src_rh);
         //destructor
-       virtual  ~Animal (void);
+       	virtual  ~Animal (void);
 
         //member functions
         virtual void makeSound(void) const;
