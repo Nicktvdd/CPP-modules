@@ -6,7 +6,7 @@
 /*   By: nvan-den <nvan-den@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 11:34:13 by nvan-den          #+#    #+#             */
-/*   Updated: 2024/02/07 11:34:14 by nvan-den         ###   ########.fr       */
+/*   Updated: 2024/03/26 14:03:22 by nvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal
         virtual  ~Animal (void) = 0;
 
         //member functions
-        virtual void makeSound(void) const;
+        virtual void makeSound() const = 0;
         //get
         std::string getType(void) const;
     protected:
