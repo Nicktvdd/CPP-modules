@@ -4,8 +4,7 @@
 #include "Min.hpp"
 #include "Max.hpp"
 
-class Awesome
-{
+class Awesome {
 public:
     Awesome(void) : _n(0) {} // Default constructor
     Awesome(int n) : _n(n) {} // Constructor with parameter
@@ -24,8 +23,7 @@ private:
 
 std::ostream& operator<<(std::ostream& o, const Awesome& a) { o << a.get_n(); return o; } // Overloaded output stream operator
 
-int main(void)
-{
+int main(void) {
     Awesome a(2), b(4);
 
     swap(a, b); // Swap the values of a and b
