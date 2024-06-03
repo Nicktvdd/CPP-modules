@@ -1,4 +1,4 @@
-NAME = a_few_functions
+NAME = iter
 
 SRC = main.cpp
 
