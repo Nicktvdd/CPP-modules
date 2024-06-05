@@ -1,5 +1,6 @@
 #include "ScalarConverter.hpp"
 
+// Initialize static member variables
 int ScalarConverter::scCharFlag = 0;
 int ScalarConverter::scIntFlag = 0;
 int ScalarConverter::scFloatFlag = 0;
@@ -10,18 +11,22 @@ float ScalarConverter::scFloat = 0;
 double ScalarConverter::scDouble = 0;
 int ScalarConverter::scType = 0;
 
+// Constructor
 ScalarConverter::ScalarConverter() {
     std::cout << "ScalarConverter constructor called" << std::endl;
 }
 
+// Copy constructor
 ScalarConverter::ScalarConverter(const ScalarConverter& other) {
     std::cout << "ScalarConverter copy constructor called" << std::endl;
     *this = other;
 }
 
+// Copy assignment operator
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
     std::cout << "ScalarConverter copy assignment constructor called" << std::endl;
     if (this != &other) {
+        // Copy member variables
         this->scCharFlag = other.scCharFlag;
         this->scIntFlag = other.scIntFlag;
         this->scFloatFlag = other.scFloatFlag;
@@ -35,10 +40,12 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
     return *this;
 }
 
+// Destructor
 ScalarConverter::~ScalarConverter() {
     std::cout << "ScalarConverter destructor called" << std::endl;
 }
 
+// Check if the string represents a char
 int ScalarConverter::isChar(std::string str) {
     if (str.length() > 1)
         return 1;
@@ -52,6 +59,7 @@ int ScalarConverter::isChar(std::string str) {
     return 1;
 }
 
+// Check if the string represents an int
 int ScalarConverter::isInt(std::string str) {
     int j = 0;
     if (str[j] == '-' || str[j] == '+')
@@ -66,6 +74,7 @@ int ScalarConverter::isInt(std::string str) {
     return 1;
 }
 
+// Check if the string represents a float
 int ScalarConverter::isFloat(std::string str) {
     if (str[str.length() - 1] != 'f')
         return 1;
@@ -115,6 +124,7 @@ int ScalarConverter::isFloat(std::string str) {
     return 1;
 }
 
+// Check if the string represents a double
 int ScalarConverter::isDouble(std::string str) {
     if (str == "-inf") {
         ScalarConverter::scDouble = -INFINITY;
@@ -160,6 +170,7 @@ int ScalarConverter::isDouble(std::string str) {
     return 1;
 }
 
+// Detect the type of the string and return an integer representing the type
 int ScalarConverter::detectType(std::string str) {
     std::cout << "Converting \"" << str << "\"" << ", which is ";
     if (!ScalarConverter::isChar(str)) {
@@ -179,6 +190,7 @@ int ScalarConverter::detectType(std::string str) {
     return 0;
 }
 
+// Cast the other types based on the detected type
 void ScalarConverter::castOthers() {
     if (scType == 1) { // from char
         ScalarConverter::scInt = static_cast<int>(ScalarConverter::scChar);
@@ -223,6 +235,7 @@ void ScalarConverter::castOthers() {
     }
 }
 
+// Print the converted variables
 void ScalarConverter::printVariables() {
     // PRINTING CHAR
     std::cout << "char: ";
@@ -258,6 +271,7 @@ void ScalarConverter::printVariables() {
     std::cout << std::endl;
 }
 
+// Convert the string to different types and print the result
 int ScalarConverter::convert(std::string str) {
     ScalarConverter::scType = detectType(str);
     if (ScalarConverter::scType == 0)
